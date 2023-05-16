@@ -1,11 +1,13 @@
 using Application.Models.RequestModel.Ship;
 using Application.Services;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Porter.Controllers
 {
     [ApiController]
     [Route("ship")]
+
     public class ShipController : ControllerBase
     {
 
@@ -19,8 +21,9 @@ namespace Porter.Controllers
             _shipService = shipService ?? throw new ArgumentNullException(nameof(shipService));
         }
 
-
+        // Enable Any cors to help UI can callapi from localhost
         [HttpGet()]
+        [EnableCors()]
         public async Task<IActionResult> GetShips()
         {
             var result = await _shipService.GetShips();
@@ -51,7 +54,6 @@ namespace Porter.Controllers
             var result = await _shipService.ClosestPort(id);
             return Ok(result);
         }
-
 
     }
 }

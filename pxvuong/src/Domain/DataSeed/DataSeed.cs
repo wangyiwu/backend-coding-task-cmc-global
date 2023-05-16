@@ -20,8 +20,8 @@ public static class PortSeedData
                 Name = "Ship 1",
                 Position = new Position()
                 {
-                    Latitude = 0,
-                    Longitude = 0,
+                    Latitude = 22,
+                    Longitude = 113.9247062962969,
                 }
             },
             new Ship()
@@ -30,8 +30,8 @@ public static class PortSeedData
                 Name = "Ship 2",
                 Position = new Position()
                 {
-                    Latitude = 169,
-                    Longitude = 22,
+                    Latitude = 23,
+                    Longitude = 113.9247062962969,
                 }
             },
             new Ship()
@@ -40,8 +40,8 @@ public static class PortSeedData
                 Name = "Ship 3",
                 Position = new Position()
                 {
-                    Latitude = 123,
-                    Longitude = 23,
+                    Latitude = 21,
+                    Longitude = 113.9247062962969,
                 }
             },
         };
