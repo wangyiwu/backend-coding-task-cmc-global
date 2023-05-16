@@ -1,4 +1,4 @@
-﻿using Application.Models.Ship;
+﻿using Application.Models.RequestModel.Ship;
 using AutoMapper;
 using Domain.Entities;
 using System;

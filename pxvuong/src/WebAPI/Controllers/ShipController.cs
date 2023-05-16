@@ -1,4 +1,4 @@
-using Application.Models.Ship;
+using Application.Models.RequestModel.Ship;
 using Application.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -48,7 +48,7 @@ namespace Porter.Controllers
         [HttpGet("closest-port/{id}")]
         public async Task<IActionResult> ClosestPort(string id)
         {
-            var result = await _shipService.GetShips();
+            var result = await _shipService.ClosestPort(id);
             return Ok(result);
         }
 

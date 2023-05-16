@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Application.Models.Ship;
+namespace Application.Models.RequestModel.Ship;
 
 public class CreateShipRequest
 {
