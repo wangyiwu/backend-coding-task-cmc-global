@@ -8,5 +8,4 @@ namespace WebAPI.Controllers;
 public class PortController : ControllerBase
 {
 
-
 }

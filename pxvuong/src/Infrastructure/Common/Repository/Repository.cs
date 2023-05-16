@@ -52,7 +52,6 @@ public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
         return entity;
     }
 
-
     TEntity IRepository<TEntity>.Update(TEntity entity, Func<TEntity, bool> predict)
     {
         int index = _entities.IndexOf(entity);

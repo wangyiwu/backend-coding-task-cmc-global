@@ -39,7 +39,6 @@ public class ShipService : IShipService
             {
                 Port closestPort = listPort.First();
                 double closestDistance = HaversineUltis.CalculateDistance(ship.Position.Latitude, ship.Position.Longitude, closestPort.Position.Latitude, closestPort.Position.Longitude);
-                
 
                 if(listPort.Count() > 1)
                 {
