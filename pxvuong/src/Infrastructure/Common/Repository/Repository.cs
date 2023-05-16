@@ -39,7 +39,6 @@ public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
         }
     }
 
-
     IEnumerable<TEntity> IRepository<TEntity>.Find(Func<TEntity, bool> expression)
     {
         IEnumerable<TEntity> items = _entities.Where(expression);
