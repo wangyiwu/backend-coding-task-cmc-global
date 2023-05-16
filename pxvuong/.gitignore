@@ -1,0 +1,37 @@
+# User-specific files
+*.log
+*.suo
+*.user
+*.vs
+*.userosscache
+*.sln.docstates
+
+.angular
+.awCache
+.idea
+.vscode
+
+# Build results
+bin/
+build/
+obj/
+object/
+out/
+publish/
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+
+
+
+
+# JetBrains Rider
+.idea/
+*.sln.iml
