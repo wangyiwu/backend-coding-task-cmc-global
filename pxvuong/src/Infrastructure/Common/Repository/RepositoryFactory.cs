@@ -31,11 +31,3 @@ public class RepositoryFactory: IRepositoryFactory
     }
 }
 
-public static class RepositoryFactoryExtension
-{
-    public static void AddRepositoryFactory(this IServiceCollection services)
-    {
-        services.AddScoped<IRepositoryFactory, RepositoryFactory>();
-    }
-}
-

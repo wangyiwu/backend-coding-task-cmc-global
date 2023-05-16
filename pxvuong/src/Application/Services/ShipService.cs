@@ -15,6 +15,7 @@ public class ShipService : IShipService
 {
     private readonly IRepositoryFactory _repositoryFactory;
     private readonly IMapper _mapper;
+
     public ShipService(
         IRepositoryFactory repositoryFactory,
         IMapper mapper
@@ -29,7 +30,9 @@ public class ShipService : IShipService
     {
         var mapped = _mapper.Map<Ship>( request ); 
         mapped.Id = Guid.NewGuid();
+
         var result = _repositoryFactory.GetRepository<Ship>().Insert( mapped );
+
         return Task.FromResult(result);
     }
 
@@ -38,4 +41,14 @@ public class ShipService : IShipService
         var result = _repositoryFactory.GetRepository<Ship>().Find(x => true);
         return Task.FromResult(result);
     }
+
+    public Task<Ship> UpdateVelocity(string id, UpdateVelocityRequest request)
+    {
+        var ship = _repositoryFactory.GetRepository<Ship>().Find(x => x.Id == Guid.Parse(id)).SingleOrDefault();
+        ship.Velocity = request.Velocity;
+        _repositoryFactory.GetRepository<Ship>().Update(ship, x => x.Id == Guid.Parse(id));
+        return Task.FromResult(ship);
+
+    }
+
 }

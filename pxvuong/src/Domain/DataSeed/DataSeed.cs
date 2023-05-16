@@ -10,7 +10,7 @@ namespace Domain.Repositories;
 
 public static class PortSeedData
 {
-    public static List<Ship> SeedDataShip()
+    public static List<Ship> SeedShipData()
     {
         return new List<Ship>()
         {
