@@ -28,9 +28,9 @@ public class ShipService : IShipService
 
     }
 
-    public Task<ClosestPortDto> ClosestPort(string id)
+    public Task<ClosestPortDto> ClosestPort(string name)
     {
-        var ship = _repositoryFactory.GetRepository<Ship>().Find(x => x.Id == Guid.Parse(id)).SingleOrDefault();
+        var ship = _repositoryFactory.GetRepository<Ship>().Find(x => x.Name == name).SingleOrDefault();
 
         if (ship != null)
         {

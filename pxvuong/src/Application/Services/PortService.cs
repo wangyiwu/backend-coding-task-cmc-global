@@ -24,7 +24,6 @@ public class PortService : IPortService
 
     }
 
-
     Task<IEnumerable<Port>> IPortService.GetPorts()
     {
         return Task.FromResult(_repositoryFactory.GetRepository<Port>().Find(x => true));

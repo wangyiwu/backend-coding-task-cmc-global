@@ -14,5 +14,5 @@ public interface IShipService
     public Task<Ship> CreateShip(CreateShipRequest request);
     public Task<IEnumerable<Ship>> GetShips();
     public Task<Ship> UpdateVelocity(string id, UpdateVelocityRequest request);
-    public Task<ClosestPortDto> ClosestPort(string id);
+    public Task<ClosestPortDto> ClosestPort(string name);
 }

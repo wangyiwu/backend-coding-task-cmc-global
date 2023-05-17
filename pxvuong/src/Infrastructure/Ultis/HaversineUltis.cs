@@ -22,6 +22,7 @@ public static class HaversineUltis
         var c = 2 * Math.Atan2(Math.Sqrt(a), Math.Sqrt(1 - a));
 
         var distance = EarthRadiusKm * c;
+
         return distance;
     }
 

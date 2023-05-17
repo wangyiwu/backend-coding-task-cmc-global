@@ -23,7 +23,6 @@ public class PortController : ControllerBase
 
     // Enable Any cors to help UI can callapi from localhost
     [HttpGet()]
-    [EnableCors()]
     public async Task<IActionResult> GetPorts()
     {
         var result = await _portService.GetPorts();

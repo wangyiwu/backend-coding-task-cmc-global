@@ -7,7 +7,6 @@ namespace Porter.Controllers
 {
     [ApiController]
     [Route("ship")]
-
     public class ShipController : ControllerBase
     {
 
@@ -23,7 +22,6 @@ namespace Porter.Controllers
 
         // Enable Any cors to help UI can callapi from localhost
         [HttpGet()]
-        [EnableCors()]
         public async Task<IActionResult> GetShips()
         {
             var result = await _shipService.GetShips();
@@ -48,10 +46,10 @@ namespace Porter.Controllers
             return Ok(result);
         }
 
-        [HttpGet("closest-port/{id}")]
-        public async Task<IActionResult> ClosestPort(string id)
+        [HttpGet("closest-port/{name}")]
+        public async Task<IActionResult> ClosestPort(string name)
         {
-            var result = await _shipService.ClosestPort(id);
+            var result = await _shipService.ClosestPort(name);
             return Ok(result);
         }
 
