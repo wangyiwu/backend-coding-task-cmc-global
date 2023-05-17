@@ -11,4 +11,5 @@ public class CreateShipRequest
 {
     public string Name { get; set; }
     public Position Position { get; set; }
+    public double Velocity { get; set; }
 }

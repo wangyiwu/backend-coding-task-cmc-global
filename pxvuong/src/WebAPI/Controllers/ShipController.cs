@@ -35,7 +35,7 @@ namespace Porter.Controllers
             return Ok(result);
         }
 
-        [HttpPut("{id}")]
+        [HttpPatch("{id}")]
         public async Task<IActionResult> UpdateVelocity(string id, UpdateVelocityRequest request)
         {
             if (string.IsNullOrEmpty(id))
