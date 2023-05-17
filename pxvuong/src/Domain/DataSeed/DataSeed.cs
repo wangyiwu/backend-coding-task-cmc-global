@@ -22,7 +22,8 @@ public static class PortSeedData
                 {
                     Latitude = 22,
                     Longitude = 113,
-                }
+                },
+                Velocity = 100
             },
             new Ship()
             {
@@ -32,7 +33,8 @@ public static class PortSeedData
                 {
                     Latitude = 20,
                     Longitude = 114,
-                }
+                },
+                Velocity = 100
             }
         };
 
