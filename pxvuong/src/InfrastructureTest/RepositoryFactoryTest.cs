@@ -40,7 +40,6 @@ namespace InfrastructureTest
             Assert.NotSame(repository1, repository2);
         }
 
-        // Add more test cases as needed
     }
 }
 }
