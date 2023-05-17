@@ -12,7 +12,6 @@ using System.Threading.Tasks;
 
 namespace Application.Services;
 
-
 public class ShipService : IShipService
 {
     private readonly IRepositoryFactory _repositoryFactory;

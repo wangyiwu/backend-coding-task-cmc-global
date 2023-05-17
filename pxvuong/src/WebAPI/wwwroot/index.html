@@ -95,7 +95,7 @@
         {
             ports.forEach(port => {
                 var marker = L.marker([port.position.latitude, port.position.longitude], { icon: portIcon }).addTo(map);
-                marker.bindPopup("Port: " + port.name).openPopup();;
+                marker.bindPopup("Port: " + port.name).openPopup();
             });
         }
 
@@ -118,7 +118,13 @@
 
                         var line = L.polyline([shipLatLng, portLatLng], { color: 'green', autoClose: false }).addTo(map);
 
-                        line.bindPopup("Distance: " + distancePortShip).openPopup();;
+                        var text = `Distance: ${distancePortShip}`;
+                        var textIcon = L.divIcon({
+                            className: 'text-icon',
+                            html: text
+                        });
+                        var midpoint = line.getCenter();
+                        var marker = L.marker(midpoint, { icon: textIcon }).addTo(map);
 
                     })
                 });
@@ -132,10 +138,18 @@
                         .then(data => {
                             var shipLatLng = L.latLng(ship.position.latitude, ship.position.longitude);
                             var portLatLng = L.latLng(data.position.latitude, data.position.longitude);
-                            var distancePortShip = portLatLng.distanceTo(shipLatLng);
+                            var distancePortShip = data.distance;
+                            var timeArrive = data.arrivalTime;
+
                             var line = L.polyline([shipLatLng, portLatLng], { color: 'red', autoClose: false }).addTo(map);
 
-                            line.bindPopup("Distance: " + distancePortShip).openPopup();;
+                            var text = `Distance: ${distancePortShip} and Time: ${timeArrive}`;
+                            var textIcon = L.divIcon({
+                                className: 'text-icon',
+                                html: text
+                            });
+                            var midpoint = line.getCenter();
+                            var marker = L.marker(midpoint, { icon: textIcon }).addTo(map);
 
                         })
                         .catch(error => {
