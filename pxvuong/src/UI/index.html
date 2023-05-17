@@ -94,7 +94,7 @@
         {
             ports.forEach(port => {
                 var marker = L.marker([port.position.latitude, port.position.longitude], { icon: portIcon }).addTo(map);
-                marker.bindPopup("Port: " + port.name);
+                marker.bindPopup("Port: " + port.name).openPopup();;
             });
         }
 
@@ -112,13 +112,12 @@
 
                     shipData.forEach(ship =>
                     {
-                       
                         var shipLatLng = L.latLng(ship.position.latitude, ship.position.longitude);
                         var distancePortShip = portLatLng.distanceTo(shipLatLng);
 
-                        var line = L.polyline([shipLatLng, portLatLng], { color: 'green' }).addTo(map);
+                        var line = L.polyline([shipLatLng, portLatLng], { color: 'green', autoClose: false }).addTo(map);
 
-                       line.bindPopup("Distance: " + distancePortShip);
+                        line.bindPopup("Distance: " + distancePortShip).openPopup();;
 
                     })
             });
