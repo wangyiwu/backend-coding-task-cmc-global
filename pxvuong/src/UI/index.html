@@ -3,47 +3,126 @@
 <head>
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    
 </head>
+
+<style>
+    .ship-icon {
+  font-size: 24px;
+  color: red;
+}
+
+.port-icon {
+  font-size: 24px;
+  color: blue;
+}
+</style>
+
 <body>
     <div id="map" style="height: 800px;"></div>
 
     <script>
 
+        let shipData = [];
+        let portsData  = [];
+        let isReadyShipData = false;
+        let isReadyPortData = false;
 
         fetch('https://localhost:7085/ship')
         .then(response => response.json())
         .then(data => {
-            // Xử lý dữ liệu tàu ở đây
+            isReadyShipData = true;
+            shipData = data;
             displayShipsOnMap(data);
         })
         .catch(error => {
             console.error('Error:', error);
         });
 
-        function displayShipsOnMap(ships) {
-        var map = L.map('map').setView([0, 0], 2);
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
-            maxZoom: 18,
-        }).addTo(map);
-        
-        // Hiển thị marker cho từng tàu trên bản đồ
-
-        var bounds = L.latLngBounds();
-
-        ships.forEach(ship => {
-            var marker = L.marker([ship.position.latitude, ship.position.longitude]).addTo(map);
-            marker.bindPopup("Ship: " + ship.name);
-
-            var latLng = L.latLng(ship.latitude, ship.longitude);
-            bounds.extend(latLng);
+        fetch('https://localhost:7085/port')
+        .then(response => response.json())
+        .then(data => {
+            isReadyPortData = true;
+            portsData = data;
+            displayPortOnMap(data);
+        })
+        .catch(error => {
+            console.error('Error:', error);
         });
-        
-        map.fitBounds(bounds);
 
+        var map = L.map('map').setView([0, 0], 2);
+        
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
+                maxZoom: 18,
+            }).addTo(map);
+
+        var shipIcon = L.divIcon({
+        className: 'ship-icon',
+        html: '<i style="" class="fas fa-ship"></i>',
+        iconSize: [32, 32]
+        });
+
+        var portIcon = L.divIcon({
+        className: 'port-icon',
+        html: '<i class="fas fa-anchor"></i>',
+        iconSize: [32, 32]
+        });
+
+        setTimeout(function() {
+            var hongKongLatLng = L.latLng(22.3193, 114.1694);
+            map.setView(hongKongLatLng, 8);
+        }, 1000);
+
+
+        setTimeout(function() {
+            var hongKongLatLng = L.latLng(22.3193, 114.1694);
+            map.setView(hongKongLatLng, 9);
+            drawLines();
+        }, 2000);
+
+        function displayShipsOnMap(ships) 
+        {
+            ships.forEach(ship => {
+                var marker = L.marker([ship.position.latitude, ship.position.longitude], { icon: shipIcon }).addTo(map);
+                marker.bindPopup("Ship: " + ship.name);
+            });
         }
 
+        function displayPortOnMap(ports)
+        {
+            ports.forEach(port => {
+                var marker = L.marker([port.position.latitude, port.position.longitude], { icon: portIcon }).addTo(map);
+                marker.bindPopup("Port: " + port.name);
+            });
+        }
 
+        function drawLines(){
+
+            while(isReadyPortData == false && isReadyShipData == false)
+            {
+                continue;
+            }
+
+            portsData.forEach(
+                port => 
+                {
+                    var portLatLng = L.latLng(port.position.latitude, port.position.longitude);
+
+                    shipData.forEach(ship =>
+                    {
+                       
+                        var shipLatLng = L.latLng(ship.position.latitude, ship.position.longitude);
+                        var distancePortShip = portLatLng.distanceTo(shipLatLng);
+
+                        var line = L.polyline([shipLatLng, portLatLng], { color: 'green' }).addTo(map);
+
+                       line.bindPopup("Distance: " + distancePortShip);
+
+                    })
+            });
+        }
 
 
     </script>

@@ -21,7 +21,7 @@ public static class PortSeedData
                 Position = new Position()
                 {
                     Latitude = 22,
-                    Longitude = 113.9247062962969,
+                    Longitude = 113,
                 }
             },
             new Ship()
@@ -30,20 +30,10 @@ public static class PortSeedData
                 Name = "Ship 2",
                 Position = new Position()
                 {
-                    Latitude = 23,
-                    Longitude = 113.9247062962969,
+                    Latitude = 20,
+                    Longitude = 114,
                 }
-            },
-            new Ship()
-            {
-                Id = Guid.NewGuid(),
-                Name = "Ship 3",
-                Position = new Position()
-                {
-                    Latitude = 21,
-                    Longitude = 113.9247062962969,
-                }
-            },
+            }
         };
 
     }
@@ -57,8 +47,8 @@ public static class PortSeedData
                 Id = Guid.NewGuid(),
                 Position = new Position
                 {
-                    Longitude = 114.17306035954454,
-                    Latitude =  22.284057934138204
+                    Longitude = 116,
+                    Latitude =  20
                 },
                 Name = "Victoria Harbour",
             },
@@ -67,60 +57,10 @@ public static class PortSeedData
                 Id = Guid.NewGuid(),
                 Position = new Position
                 {
-                    Longitude =114.14768122090493,
-                    Latitude =   22.245156286086612
+                    Longitude =112,
+                    Latitude =   22
                 },
                 Name = "Aberdeen Harbour",
-            },
-            new Port()
-            {
-                Id = Guid.NewGuid(),
-                Position = new Position
-                {
-                    Longitude =  114.20621508465587,
-                    Latitude =  22.284057934138204
-                },
-                Name = "Double Haven ",
-            },
-            new Port()
-            {
-                Id = Guid.NewGuid(),
-                Position = new Position
-                {
-                    Longitude = 116.17306035954454,
-                    Latitude =  22.284057934138204
-                },
-                Name = "Port Shelter",
-            },
-            new Port()
-            {
-                Id = Guid.NewGuid(),
-                Position = new Position
-                {
-                    Longitude = 119.17306035954454,
-                    Latitude =  22.284057934138204
-                },
-                Name = "Inner Port Shelter",
-            },
-            new Port()
-            {
-                Id = Guid.NewGuid(),
-                Position = new Position
-                {
-                    Longitude = 112.17306035954454,
-                    Latitude =  22.284057934138204
-                },
-                Name = "Tolo Harbour",
-            },
-            new Port()
-            {
-                Id = Guid.NewGuid(),
-                Position = new Position
-                {
-                    Longitude = 155.17306035954454,
-                    Latitude =  22.284057934138204
-                },
-                Name = "Tai Tam Harbour",
             }
         };
     }

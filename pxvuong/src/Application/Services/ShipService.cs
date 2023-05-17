@@ -23,26 +23,26 @@ public class ShipService : IShipService
         IMapper mapper
         )
     {
-        this._repositoryFactory = repositoryFactory ?? throw new ArgumentNullException(nameof(repositoryFactory));
-        this._mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));  
-        
+        _repositoryFactory = repositoryFactory ?? throw new ArgumentNullException(nameof(repositoryFactory));
+        _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
+
     }
 
     public Task<ClosestPortDto> ClosestPort(string id)
     {
         var ship = _repositoryFactory.GetRepository<Ship>().Find(x => x.Id == Guid.Parse(id)).SingleOrDefault();
 
-        if(ship != null)
+        if (ship != null)
         {
             var listPort = _repositoryFactory.GetRepository<Port>().Find(x => true).ToList();
-            if(listPort.Any())
+            if (listPort.Any())
             {
                 Port closestPort = listPort.First();
                 double closestDistance = HaversineUltis.CalculateDistance(ship.Position.Latitude, ship.Position.Longitude, closestPort.Position.Latitude, closestPort.Position.Longitude);
 
-                if(listPort.Count() > 1)
+                if (listPort.Count() > 1)
                 {
-                    for(int i = 1; i < listPort.Count(); i++)
+                    for (int i = 1; i < listPort.Count(); i++)
                     {
                         var currentPort = listPort[i];
 
@@ -75,10 +75,10 @@ public class ShipService : IShipService
 
     public Task<Ship> CreateShip(CreateShipRequest request)
     {
-        var mapped = _mapper.Map<Ship>( request ); 
+        var mapped = _mapper.Map<Ship>(request);
         mapped.Id = Guid.NewGuid();
 
-        var result = _repositoryFactory.GetRepository<Ship>().Insert( mapped );
+        var result = _repositoryFactory.GetRepository<Ship>().Insert(mapped);
 
         return Task.FromResult(result);
     }
