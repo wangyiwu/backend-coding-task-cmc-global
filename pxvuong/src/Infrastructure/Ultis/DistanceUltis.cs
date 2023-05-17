@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Infrastructure.Ultis;
 
-public static class HaversineUltis
+public static class DistanceUltis
 {
     private const double EarthRadiusKm = 6371;
 

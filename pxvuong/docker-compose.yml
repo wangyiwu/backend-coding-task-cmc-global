@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  webapi:
+    image: porter
+    build:
+      context: .
+      dockerfile: Dockerfile

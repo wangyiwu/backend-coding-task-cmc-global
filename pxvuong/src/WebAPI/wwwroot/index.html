@@ -30,7 +30,7 @@
         let isReadyShipData = false;
         let isReadyPortData = false;
 
-        fetch('https://localhost:7085/ship')
+        fetch('http://localhost:7085/ship')
         .then(response => response.json())
         .then(data => {
             isReadyShipData = true;
@@ -41,7 +41,7 @@
             console.error('Error:', error);
         });
 
-        fetch('https://localhost:7085/port')
+        fetch('http://localhost:7085/port')
         .then(response => response.json())
         .then(data => {
             isReadyPortData = true;
@@ -133,7 +133,7 @@
             shipData.forEach(
                 ship =>
                 {
-                    fetch(`https://localhost:7085/ship/closest-port/${ship.name}`)
+                    fetch(`http://localhost:7085/ship/closest-port/${ship.name}`)
                         .then(response => response.json())
                         .then(data => {
                             var shipLatLng = L.latLng(ship.position.latitude, ship.position.longitude);

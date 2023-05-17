@@ -10,7 +10,6 @@ namespace Domain.Repository;
 public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
 {
     private List<TEntity> _entities;
-
     public Repository()
     {
         this._entities = new List<TEntity>();
@@ -28,7 +27,6 @@ public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
         get { return _entities; }
         set { _entities = value; }
     }
-
 
     void IRepository<TEntity>.Delete(Func<TEntity, bool> predict)
     {

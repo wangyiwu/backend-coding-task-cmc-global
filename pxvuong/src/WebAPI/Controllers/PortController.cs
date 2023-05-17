@@ -21,7 +21,6 @@ public class PortController : ControllerBase
         _portService = portService ?? throw new ArgumentNullException(nameof(portService));
     }
 
-    // Enable Any cors to help UI can callapi from localhost
     [HttpGet()]
     public async Task<IActionResult> GetPorts()
     {
