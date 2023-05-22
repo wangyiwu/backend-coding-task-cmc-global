@@ -21,6 +21,7 @@ Before you begin, ensure that you have the following prerequisites installed on 
 git clone https://github.com/wangyiwu/backend-coding-task-cmc-global.git
 ```
 
+
 4. Wait for the cloning process to complete. Once finished, you will have a local copy of the source code.
 
 ## Run Docker Compose
@@ -33,7 +34,7 @@ cd <repository-directory>
 
 Replace <repository-directory> with the name of the directory where the source code was cloned.
 
-2. Change to the directory to pxvuong
+2. Inside folder backend-coding-task-cmc-global, change to the directory to pxvuong
 
 ```
 cd pxvuong
@@ -52,6 +53,37 @@ docker-compose up
 In broser aceess to url: http://localhost:7084/swagger/index.html (make sure you are using http, currrenty this application doesn't config https)
 
 ![img1](https://i.imgur.com/iG5537Y.png)
+
+#### As a consumer of the API, I want to be able to add ships to the system.
+
+Step 1: to to swagger
+
+Step2: Press try it out
+![img1](https://i.imgur.com/FqDhfIC.png)
+
+Step3: Press Execute
+
+![img1](https://i.imgur.com/XpgZifP.png)
+
+See the result:
+![img1](https://i.imgur.com/HsAPNLG.png)
+
+
+#### As a consumer of the API, I want to be able to see the closest port to a ship with estimated arrival time to the port together with relevant details.
+
+
+Step 1: to to swagger
+
+Step2: Press try it out
+![img1](https://i.imgur.com/sJA5i72.png)
+
+Step3: Press Execute and Enter Ship Name
+
+then wait and see the result:
+![img1](https://i.imgur.com/iWW1NXR.png)
+
+
+
 
 ### Access to UI
 
