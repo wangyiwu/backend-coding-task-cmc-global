@@ -26,5 +26,5 @@ WORKDIR /app
 COPY --from=publish /app/publish .
 
 #ENTRYPOINT ["dotnet", "WebAPI.dll"]
-RUN dotnet dev-certs https
+
 ENTRYPOINT ["dotnet", "WebAPI.dll", "--environment=Development"]
