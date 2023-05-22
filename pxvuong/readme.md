@@ -84,7 +84,6 @@ then wait and see the result:
 
 
 
-
 ### Access to UI
 
 In broser aceess to url: http://localhost:7084/index.html   (make sure you are using http, currrenty this application doesn't config https)
@@ -92,5 +91,8 @@ In broser aceess to url: http://localhost:7084/index.html   (make sure you are u
 You can view the port and the closest port to ship.
 
 *The red line indicates that this is the shortest path from the ship to the harbour.*
+
+<i class="fas fa-anchor"></i> indicates that this is the Ship. </br>
+<i class="fas fa-anchor"></i> indicates that this is the Ship.
 
 ![img1](https://i.imgur.com/TGIGdEm.png)
