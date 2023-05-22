@@ -7,4 +7,3 @@ services:
       - ASPNETCORE_URLS=http://+:7084
     ports:
       - '7084:7084'
-      - '7085:7085'
