@@ -51,6 +51,8 @@ docker-compose up
 
 In broser aceess to url: http://localhost:7084/swagger/index.html (make sure you are using http, currrenty this application doesn't config https)
 
+![img1](https://i.imgur.com/iG5537Y.png)
+
 ### Access to UI
 
 In broser aceess to url: http://localhost:7084/index.html   (make sure you are using http, currrenty this application doesn't config https)
