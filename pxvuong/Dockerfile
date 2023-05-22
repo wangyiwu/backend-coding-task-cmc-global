@@ -5,6 +5,7 @@ WORKDIR /app
 EXPOSE 80
 EXPOSE 443
 EXPOSE 7085
+EXPOSE 7084
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
@@ -23,4 +24,6 @@ RUN dotnet publish "WebAPI.csproj" -c Release -o /app/publish /p:UseAppHost=fals
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "WebAPI.dll"]
+
+#ENTRYPOINT ["dotnet", "WebAPI.dll"]
+ENTRYPOINT ["dotnet", "WebAPI.dll", "--environment=Development"]

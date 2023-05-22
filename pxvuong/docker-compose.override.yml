@@ -4,10 +4,7 @@ services:
   webapi:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - ASPNETCORE_URLS=https://+:7085;http://+:7084
+      - ASPNETCORE_URLS=http://+:7084
     ports:
-      - "80"
-      - "443"
-    volumes:
-      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
-      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+      - '7084:7084'
+      - '7085:7085'
