@@ -90,9 +90,18 @@ In broser aceess to url: http://localhost:7084/index.html   (make sure you are u
 
 You can view the port and the closest port to ship.
 
-*The red line indicates that this is the shortest path from the ship to the harbour.*
 
-<i class="fas fa-anchor"></i> indicates that this is the Ship. </br>
-<i class="fas fa-anchor"></i> indicates that this is the Ship.
+
+<html>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+The red line indicates that this is the shortest path from the ship to the harbour.
+<div>
+<i class="fas fa-anchor"></i> indicates that this is the Port . </br>
+<i style="" class="fas fa-ship"></i> indicates that this is the Ship.
+</div>
+
+</html>
 
 ![img1](https://i.imgur.com/TGIGdEm.png)
