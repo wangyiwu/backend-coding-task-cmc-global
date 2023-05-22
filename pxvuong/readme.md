@@ -56,7 +56,7 @@ In broser aceess to url: http://localhost:7084/swagger/index.html (make sure you
 
 #### As a consumer of the API, I want to be able to see all ships in the system.
 
-Step 1: to to swagger
+Step 1: Go to swagger
 
 Step2: Press try it out
 ![img1](https://i.imgur.com/FqDhfIC.png)
@@ -72,7 +72,7 @@ See the result:
 #### As a consumer of the API, I want to be able to see the closest port to a ship with estimated arrival time to the port together with relevant details.
 
 
-Step 1: to to swagger
+Step 1: Go to swagger
 
 Step2: Press try it out
 ![img1](https://i.imgur.com/sJA5i72.png)
@@ -89,8 +89,6 @@ then wait and see the result:
 In broser aceess to url: http://localhost:7084/index.html   (make sure you are using http, currrenty this application doesn't config https)
 
 You can view the port and the closest port to ship.
-
-
 
 
 
