@@ -20,7 +20,6 @@ namespace Porter.Controllers
             _shipService = shipService ?? throw new ArgumentNullException(nameof(shipService));
         }
 
-        // Enable Any cors to help UI can callapi from localhost
         [HttpGet()]
         public async Task<IActionResult> GetShips()
         {
