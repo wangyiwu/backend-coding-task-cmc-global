@@ -1,4 +1,5 @@
 using Application.Models.RequestModel.Ship;
+using Application.Models.Validatation;
 using Application.Services;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
@@ -24,12 +25,25 @@ namespace Porter.Controllers
         public async Task<IActionResult> GetShips()
         {
             var result = await _shipService.GetShips();
+
+            if (!result.Any())
+            {
+                return NoContent();
+            }
+
             return Ok(result);
         }
 
         [HttpPost]
         public async Task<IActionResult> CreateShip(CreateShipRequest request)
         {
+            var validatorResult = (new CreateShipRequestValidator()).Validate(request);
+
+            if(!validatorResult.IsValid)
+            {
+                return BadRequest(validatorResult.Errors);
+            }
+
             var result = await _shipService.CreateShip(request);
             return Ok(result);
         }
