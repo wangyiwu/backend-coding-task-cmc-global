@@ -7,7 +7,7 @@ Before you begin, ensure that you have the following prerequisites installed on 
 
 [Git](https://git-scm.com/) - Version control system for cloning the source code repository.
 
-[Git](https://www.docker.com/)- Containerization platform for running the application with Docker Compose.
+[Docker](https://www.docker.com/)- Containerization platform for running the application with Docker Compose.
 
 ## Clone the Source Code
 
