@@ -92,17 +92,13 @@ You can view the port and the closest port to ship.
 
 
 
-<html>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
 The red line indicates that this is the shortest path from the ship to the harbour.
 
-<div>
-<i class="fas fa-anchor"></i>Anchor icon indicates that this is the Port . </br>
-<i style="" class="fas fa-ship"></i>Ship icon indicates that this is the Ship.
-</div>
+<img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/solid/anchor.svg" width="50" height="50"> icon indicates that this is the Port . </br>
 
-</html>
+<img src="https://github.com/FortAwesome/Font-Awesome/raw/0698449d50f2b95517562295a59d414afc68b369/js-packages/%40fortawesome/fontawesome-free/svgs/solid/ship.svg" width="50" height="50"> Ship icon indicates that this is the Ship.
+
 
 ![img1](https://i.imgur.com/TGIGdEm.png)
