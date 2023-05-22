@@ -49,11 +49,11 @@ docker-compose up
 
 ### Access to api swagger
 
-In broser aceess to url: http://localhost:7084/swagger/index.html
+In broser aceess to url: http://localhost:7084/swagger/index.html (make sure you are using http, currrenty this application doesn't config https)
 
 ### Access to UI
 
-In broser aceess to url: http://localhost:7084/index.html
+In broser aceess to url: http://localhost:7084/index.html   (make sure you are using http, currrenty this application doesn't config https)
 
 You can view the port and the closest port to ship.
 
