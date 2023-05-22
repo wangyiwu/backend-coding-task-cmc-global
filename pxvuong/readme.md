@@ -54,7 +54,7 @@ In broser aceess to url: http://localhost:7084/swagger/index.html (make sure you
 
 ![img1](https://i.imgur.com/iG5537Y.png)
 
-#### As a consumer of the API, I want to be able to add ships to the system.
+#### As a consumer of the API, I want to be able to see all ships in the system.
 
 Step 1: to to swagger
 
@@ -84,7 +84,7 @@ then wait and see the result:
 
 
 
-### Access to UI
+### Access to UI to check result
 
 In broser aceess to url: http://localhost:7084/index.html   (make sure you are using http, currrenty this application doesn't config https)
 
