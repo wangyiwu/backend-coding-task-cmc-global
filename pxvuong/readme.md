@@ -97,9 +97,10 @@ You can view the port and the closest port to ship.
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
 The red line indicates that this is the shortest path from the ship to the harbour.
+
 <div>
-<i class="fas fa-anchor"></i> indicates that this is the Port . </br>
-<i style="" class="fas fa-ship"></i> indicates that this is the Ship.
+<i class="fas fa-anchor"></i>Anchor icon indicates that this is the Port . </br>
+<i style="" class="fas fa-ship"></i>Ship icon indicates that this is the Ship.
 </div>
 
 </html>
