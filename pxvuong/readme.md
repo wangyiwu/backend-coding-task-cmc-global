@@ -6,6 +6,7 @@ This guide provides step-by-step instructions on how to clone the source code re
 Before you begin, ensure that you have the following prerequisites installed on your system:
 
 [Git](https://git-scm.com/) - Version control system for cloning the source code repository.
+
 [Git](https://www.docker.com/)- Containerization platform for running the application with Docker Compose.
 
 ## Clone the Source Code
